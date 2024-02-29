@@ -1,17 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Login = () => {
+    const [cred, setCred] = useState({
+        username: "",
+        password: ""
+    })
+
+    const handleChange = (event) => {
+        setCred({
+            ...cred,
+        })
+    }
+
     return (
       <div>
         <h1>Login</h1>
         <form>
           <div>
           <label htmlFor="username">Username:</label>
-          <input id="username"/>
+          <input onChange={handleChange} id="username"/>
           </div>
           <div>
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password"/>
+          <input onChange={handleChange} type="password" id="password"/>
           </div>
           <button>Submit</button>
         </form>
