@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Routes, Route } from 'react-router-dom'; // Import Routes instead of Route
+import { Routes, Route, Link } from 'react-router-dom'; // Import Routes instead of Route
 
 import Login from './components/Login';
 import FriendsList from './components/FriendsList';
@@ -10,6 +10,14 @@ function App() {
   return (
     <div className="App">
       {/* Wrap your routes with <Routes> */}
+      <header>
+        <h2>Friends Database</h2>
+        <Link className='link' to="login">Login</Link>
+        <Link className='link' to="friends">Friends List</Link>
+        <Link className='link' to="friends/add">Add Friends</Link>
+        <Link className='link' to="friends">Logout</Link>
+
+      </header>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
